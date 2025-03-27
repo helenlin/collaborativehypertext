@@ -11,7 +11,39 @@ body
 }
 
 
+.textblock 
+{
+    position: absolute;
+    font-family: montserrat;
+    text-align: left;
+    width: 400px; 
+    height: 100px;
+    top: 7vh;
+    left: 2000px;
+    border: 5px solid gray;
+}
 
+#scene1
+{
+    top: 70vh;
+    left: 1000px;
+}
+
+#scene2
+{
+    left: 2000px;
+}
+
+#scene3
+{
+    top: 70vh;
+    left: 2800px;
+}
+
+#ending 
+{
+    left: 3500px;
+}
 
 #timerDisplay 
 {
@@ -21,6 +53,7 @@ body
     left: 5vh;
     margin-bottom: 20px;
     background-color: white;
+    z-index: 50;
 }
 
 #nose 
@@ -52,9 +85,18 @@ body
     line-height: 1.2;
 }
 
+#bird {
+    position: absolute; 
+    left: 300px;
+    font-family: monospace;
+    white-space: pre;
+    font-size: 10px;
+    text-align: left;
+    line-height: 1.2;
+}
 
 
-
+/*
 #bird {
     position: absolute;
     top: 0px;
@@ -64,6 +106,7 @@ body
     display: none;
     block-size: 150px;
 }
+*/
 
 #duolingo {
     position: absolute;
