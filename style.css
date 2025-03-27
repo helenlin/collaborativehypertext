@@ -27,3 +27,12 @@ body
     top: 0;
     left: 0;
 }
+
+#threads 
+{
+    position: absolute;
+    z-index: -1;
+    height: 40vh;
+    top: 26vh;
+    left: 60vh;
+}
