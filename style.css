@@ -1,6 +1,11 @@
+@font-face {
+    font-family: montserrat;
+    src: url("assets/MontserratUnderline-VariableFont_wght.ttf");
+}
+
 body 
 {
-    font-family: Arial, sans-serif;
+    font-family: montserrat;
     text-align: center;
     margin-top: 20%;
 }
@@ -12,4 +17,13 @@ body
     top: 5vh;
     left: 5vh;
     margin-bottom: 20px;
+}
+
+#nose 
+{
+    position: absolute;
+    z-index: -10;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
