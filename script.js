@@ -1,5 +1,5 @@
 const timerDisplay = document.getElementById("timerDisplay");
-const totalSeconds = 10800; // 3 hours in seconds
+const totalSeconds = 10800; 
 const STORAGE_KEY = "accessStartTime";
 
 function formatTime(s) {
@@ -44,8 +44,44 @@ window.addEventListener("load", () => {
   const startTime = localStorage.getItem(STORAGE_KEY);
   const now = Date.now();
   if (startTime && (now - parseInt(startTime)) >= totalSeconds * 1000) {
-    expireAccess(); // Expired on load
+    expireAccess(); 
   } else {
-    startCountdown(); // Start or resume countdown
+    startCountdown(); 
   }
 });
+
+
+const bird = document.getElementById("bird");
+
+
+function showBirdTemporarily() {
+  console.log("Bird should appear now"); 
+  bird.style.display = "block"; 
+  setTimeout(() => {
+    bird.style.display = "none"; 
+    console.log("Bird disappeared"); 
+  }, 3000);
+}
+
+setInterval(showBirdTemporarily, 30000);
+
+showBirdTemporarily();
+
+
+
+const flow = document.getElementById("flow");
+
+
+function showFlowTemporarily() {
+console.log("flow should appear now"); 
+flow.style.display = "block"; 
+setTimeout(() => {
+flow.style.display = "none"; 
+console.log("flow disappeared"); 
+}, 3000);
+}
+
+setInterval(showFlowTemporarily, 30000);
+
+showFlowTemporarily();
+
