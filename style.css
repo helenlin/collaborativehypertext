@@ -1,0 +1,15 @@
+body 
+{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20%;
+}
+
+#timerDisplay 
+{
+    font-size: 1em;
+    position: fixed;
+    top: 5vh;
+    left: 5vh;
+    margin-bottom: 20px;
+}
