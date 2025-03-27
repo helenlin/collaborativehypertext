@@ -10,6 +10,9 @@ body
     margin-top: 20%;
 }
 
+
+
+
 #timerDisplay 
 {
     font-size: 1em;
@@ -17,6 +20,7 @@ body
     top: 5vh;
     left: 5vh;
     margin-bottom: 20px;
+    background-color: white;
 }
 
 #nose 
@@ -39,22 +43,26 @@ body
 
 
 #cat {
+    position: absolute; 
+    left: 3100px;
     font-family: monospace;
     white-space: pre;
-    font-size: 16px;
+    font-size: 10px;
     text-align: left;
     line-height: 1.2;
-  }
+}
+
+
 
 
 #bird {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 500px;
-    height: 500px;
+    width: 50px;
+    height: 50px;
     display: none;
-
+    block-size: 150px;
 }
 
 #duolingo {
