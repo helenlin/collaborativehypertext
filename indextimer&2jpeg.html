@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+
+    #timerDisplay {
+      font-size: 2em;
+      margin-bottom: 20px;
+
+    }
+    #cat {
+      font-family: monospace;
+      white-space: pre;
+      font-size: 16px;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+
+    #bird {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 500px;
+            height: 500px;
+            display: none;
+
+        }
+
+        #duolingo {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 50px;
+            height: 50px;
+            display: none;
+        }
+
+        #flow {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 50px;
+            height: 50px;
+            display: none;
+        }
+
+        #shows {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 50px;
+            height: 50px;
+            display: none;
+
+        }
+
+  </style>
+</head>
+<body>
+  <div id="timerDisplay">Loading timer...</div>
+  <div id="cat">
+  　　　　　　 ＿＿
+  　　　　　／＞　　フ
+  　　　　　|  　_　 _l
+  　 　　　／` ミ＿꒳ノ
+  　　 　 /　　　 　 |
+  　　　 /　 ヽ　　 ﾉ
+  　 　 │　　|　|　|
+  　／￣|　　 |　|　|
+  　| (￣ヽ＿_ヽ_)__)
+  　＼二つ
+</div>
+  
+<div id="bird"><img src="bird.jpeg"></div>
+<div id="duolingo"><img src="duolingo.jpeg"></div>
+<div id="flow"><img src="flow.jpeg"></div>
+<div id="shows"><img src="showsinManhattan.jpeg"></div>
+
+
+
+  <script>
+    const timerDisplay = document.getElementById("timerDisplay");
+    const totalSeconds = 10800; 
+    const STORAGE_KEY = "accessStartTime";
+
+    function formatTime(s) {
+      const hrs = Math.floor(s / 3600);
+      const mins = Math.floor((s % 3600) / 60);
+      const secs = s % 60;
+      return `${hrs}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function expireAccess() {
+      document.body.innerHTML = `
+        <h1>Access Expired</h1>
+        <p>Your 3-hour access window has ended.</p>
+      `;
+    }
+
+    function startCountdown() {
+      let startTime = localStorage.getItem(STORAGE_KEY);
+
+      if (!startTime) {
+        startTime = Date.now();
+        localStorage.setItem(STORAGE_KEY, startTime);
+      } else {
+        startTime = parseInt(startTime);
+      }
+
+      const timer = setInterval(() => {
+        const now = Date.now();
+        const elapsed = Math.floor((now - startTime) / 1000);
+        const remaining = totalSeconds - elapsed;
+
+        if (remaining <= 0) {
+          clearInterval(timer);
+          expireAccess();
+        } else {
+          timerDisplay.textContent = `Time left: ${formatTime(remaining)}`;
+        }
+      }, 1000);
+    }
+
+    window.addEventListener("load", () => {
+      const startTime = localStorage.getItem(STORAGE_KEY);
+      const now = Date.now();
+      if (startTime && (now - parseInt(startTime)) >= totalSeconds * 1000) {
+        expireAccess(); 
+      } else {
+        startCountdown(); 
+      }
+    });
+
+
+    const bird = document.getElementById("bird");
+
+
+    function showBirdTemporarily() {
+      console.log("Bird should appear now"); 
+      bird.style.display = "block"; 
+      setTimeout(() => {
+        bird.style.display = "none"; 
+        console.log("Bird disappeared"); 
+      }, 3000);
+    }
+
+setInterval(showBirdTemporarily, 30000);
+
+ showBirdTemporarily();
+
+
+
+ const flow = document.getElementById("flow");
+
+
+function showFlowTemporarily() {
+  console.log("flow should appear now"); 
+  flow.style.display = "block"; 
+  setTimeout(() => {
+    flow.style.display = "none"; 
+    console.log("flow disappeared"); 
+  }, 3000);
+}
+
+setInterval(showFlowTemporarily, 30000);
+
+showFlowTemporarily();
+
+
+
+  </script>
+</body>
+</html>
