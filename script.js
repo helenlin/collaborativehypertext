@@ -2,6 +2,10 @@ const timerDisplay = document.getElementById("timerDisplay");
 const totalSeconds = 10800; 
 const STORAGE_KEY = "accessStartTime";
 
+function init(){
+  localStorage.clear();
+}
+
 function formatTime(s) {
   const hrs = Math.floor(s / 3600);
   const mins = Math.floor((s % 3600) / 60);
@@ -51,8 +55,12 @@ window.addEventListener("load", () => {
 });
 
 
-const bird = document.getElementById("bird");
 
+
+/*
+
+
+const bird = document.getElementById("bird");
 
 function showBirdTemporarily() {
   console.log("Bird should appear now"); 
@@ -71,7 +79,6 @@ showBirdTemporarily();
 
 const flow = document.getElementById("flow");
 
-
 function showFlowTemporarily() {
 console.log("flow should appear now"); 
 flow.style.display = "block"; 
@@ -85,3 +92,4 @@ setInterval(showFlowTemporarily, 30000);
 
 showFlowTemporarily();
 
+*/

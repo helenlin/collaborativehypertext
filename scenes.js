@@ -372,18 +372,33 @@ const scenes = [
 
 function randSceneText1() {
     return Math.floor(Math.random() * 40);
-  }
-    const sceneDiv = document.querySelector(".scene");
-    const randomNumber = randSceneText1();
-    const text = scenes[randomNumber];
-    if (sceneDiv) {
-      sceneDiv.innerHTML = text;
-    }
+}
 
-    const div1 = document.getElementById('div1');
-    if (div1) {
-      div1.innerText = text;
-    };
+
+const sceneDiv = document.querySelector(".scene");
+const randomNumber = randSceneText1();
+let text = scenes[randomNumber];
+if (sceneDiv) {
+  sceneDiv.innerHTML = text;
+}
+
+const div1 = document.getElementById('scene1');
+if (div1) {
+  div1.innerText = text;
+};
+text = scenes[randSceneText1()];
+const div2 = document.getElementById('scene2');
+if (div2) {
+  div2.innerText = text;
+};
+text = scenes[randSceneText1()];
+const div3 = document.getElementById('scene3');
+if (div3) {
+  div3.innerText = text;
+};
+
+
+
 
 function randEndingText() {
     return Math.floor(Math.random() * 2);
@@ -395,7 +410,8 @@ function randEndingText() {
         endingDiv.innerHTML = text;
     }
 
-    const div3 = document.getElementById('ending');
-    if (div3) {
-        div3.innerText = text;
+    const div4 = document.getElementById('ending');
+    if (div4) {
+        div4.innerText = text;
     };
+  
