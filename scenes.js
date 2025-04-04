@@ -395,7 +395,7 @@ function randEndingText() {
         endingDiv.innerHTML = text;
     }
 
-    const div3 = document.getElementById('div3');
+    const div3 = document.getElementById('ending');
     if (div3) {
         div3.innerText = text;
     };
